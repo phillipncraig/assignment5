@@ -6,26 +6,16 @@ import registerServiceWorker from './registerServiceWorker';
 
 const toDoList = [
   {
-    title: 'Pick up Groceries',
-    text: 'Bannanas,Eggs, Milk',
+    title: 'Listen to Dr. Meladandri\'s podcast',
+    text: 'https://www.radionz.co.nz/national/programmes/ourchangingworld/audio/2018631849/science-speed-dating-leads-to-top-award',
     complete: false
 
   }, {
-    title: 'Call Mike',
-    text: 'on Friday the 16th',
+    title: 'Haircut',
+    text: 'Book for early next week',
     complete: false
 
-  }, {
-    title: 'Test 3',
-    text: 'text3 here',
-    complete: false
-
-  }, {
-    title: 'Test 4',
-    text: 'text4 here',
-    complete: false
-
-  }
+  }, 
 ]
 
 ReactDOM.render(<App toDoList = {toDoList}/>, document.getElementById('root'));
