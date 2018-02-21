@@ -6,8 +6,6 @@ import ListItem from '../ListItem'
 //and uses map to create a list of children listItem components
 class FullList extends Component {
   render() {
-    
-    console.log(this.props.filter)
     let filteredToDoList = this.props.toDoList.filter((toDo) => {
       if (this.props.filter === 'active') {
         return toDo.complete === false
@@ -17,7 +15,6 @@ class FullList extends Component {
         return true
       }
     })
-
     
     //Take the array of toDoList and map each item into a listItem component
     let toDos = filteredToDoList.map((toDo, i) => {
@@ -37,15 +34,21 @@ class FullList extends Component {
         <table>
         <tbody>
           <tr>
+          
             <th>
               Complete
             </th>
+            
+          
             <th>
               Title
             </th>
+            
+          
             <th>
               Task
             </th>
+            
           </tr>
           {toDos}
         </tbody>

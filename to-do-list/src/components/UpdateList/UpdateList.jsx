@@ -66,10 +66,17 @@ class UpdateList extends Component {
                     alert("Whoops! You forgot to add a new task")
                     return
                   } else {
-                    this.addNew(this.state.form.title,
+                    this.addNew(
+                      this.state.form.title,
                       this.state.form.text,
                     )
                   }
+                  this.setState({
+                    form: {
+                      title: "",
+                      text: "",
+                    }
+                  })
                 }
               } />
           </form>

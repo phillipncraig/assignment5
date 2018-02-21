@@ -47,10 +47,16 @@ class App extends Component {
       filter: filter
     })
   }
+
   // An event handler that will update the status value in state and pass down to ListItem to update styling in the child Ternary
   // Caused issues now resolved on interaction with clearList, where array id complete states were being passed along (in a 4 long array props[2] moves position in as state changes) 
   completeCheck = (id) => {
     this.state.toDoList[id].complete = !this.state.toDoList[id].complete
+    // this.setState({
+    //   toDoList: {
+    //    complete: !this.state.complete,
+    //   },
+    // })
     this.setState({
       toDoList: this.state.toDoList
     })
@@ -60,14 +66,17 @@ class App extends Component {
     return (
       
         <div className="App">
+        <Filter changeFilter={this.changeFilter} />
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">To-Do List</h1>
+            
           </header>
 
           <main className="container">
             <div className="row">
-              <UpdateList addToDo={this.addToDo} />
+            
+            <UpdateList addToDo={this.addToDo} />
               
             </div>
 
@@ -77,7 +86,7 @@ class App extends Component {
               changeFilter={this.changeFilter}
             />
           <div className="row">
-            <Filter changeFilter={this.changeFilter} />
+            
             <ClearList clearList={this.clearList} />
           </div>
           </main>
